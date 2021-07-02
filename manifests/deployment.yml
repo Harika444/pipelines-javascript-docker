@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: harikapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: harikapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: harikapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: harikapipelinesjavascriptdocker 
+          image: myappdemo.azurecr.io/harikapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
